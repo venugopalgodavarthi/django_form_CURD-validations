@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+<table>
+        <tr><th><label for="id_cname">Cname:</label></th><td><input type="text" name="cname" value={{res.cname}} 
+            required id="id_cname"></td></tr>     
+<tr><th><label for="id_email">Email:</label></th><td><input type="email" name="email" value={{res.email}} 
+    required id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="number" name="phone" value={{res.phone}} 
+    min="5555555555" max="9999999999" required id="id_phone"></td></tr>
+<tr><th><label for="id_dob">Dob:</label></th><td><input type="date" name="dob" value={{res.dob}} 
+    required id="id_dob"></td></tr>
+<tr><th><label for="id_gender">Gender:</label></th><td><select name="gender" id="id_gender">
+  <option value="Male" selected>MALE</option>
+
+  <option value="Female">FEMALE</option>
+<input type="submit" value="Update">
+</select></td></tr></table>
+</form>
+</body>
+</html>

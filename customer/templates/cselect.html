@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <td> ID</td><td>Name</td><td>EMail</td><td>Phone</td><td>DOB</td><td>Gender</td><td>Password</td><td>DOR</td>
+        </tr>
+        {% for o in res %}
+        <tr>
+            <td>{{o.id}}</td><td>{{o.cname}}</td><td>{{o.email}}</td>
+            <td>{{o.phone}}</td><td>{{o.dob}}</td><td>{{o.gender}}</td><td>{{o.password}}</td><td>{{o.dor}}</td>
+            <td><a href="{% url 'customer:cupdate' data=o.id %}"><button>Update</button></a></td>
+            <td><a href="{% url 'customer:cdelete' data=o.id %}"><button>Delete</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
